@@ -177,6 +177,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CalciModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CalciResultClass.cs" />
     <Compile Include="Calculator.cs">
       <DependentUpon>CalciModel.tt</DependentUpon>
     </Compile>

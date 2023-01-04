@@ -12,20 +12,51 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     
     <script type="text/javascript">
+        function getData() {
+            // debugger;
+            var url = "/api/Calci";
+            $.ajax({
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                type: "Get",
+                success: function (results) {
+                     //debugger;
+                    if (results) {
+                        var row = '';
+                        for (let i = 0; i < results.length; i++) {
+                            row = row + "<tr>" +
+                                + "<td>" + results[i].firstnumber + "</td>"
+                                + "<td>" + results[i].secondnumber + "</td>"
+                                + "<td>" + results[i].result + "</td>"
+                                + "<td>" + results[i].operation + "</td>"
+                                + "<td>" + results[i].CreatedOn + "</td>"
+                                + "</tr>";
+                        }
+                    }
+                    if (row != '') {
+                        $('#tbldata').append(row);
+                    }
+                    /*   alert(result);*/
+
+                },
+                error: function (msg) {
+                   // debugger;
+                    alert(msg);
+                }
+            });
+        }
         $(document).ready(function () {
+            getData();
             $("#button1").click(function () {
-                debugger;
+                //debugger;
                 var num1 = $("#txt1").val();
                 var num2 = $("#txt2").val();
-                /* var oop = $("#button1").val();*/
                 var oop = $(this).attr('id');
-                /*$("#input").val(oop); */
-                //alert($(this).val());
                 $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation="+oop, function (data) {
                     $("#result").text(data);
                
                 var insert = {};
-                /*insert.ID = $("#txt1").val();*/
                 insert.firstNumber = $("#txt1").val();
                 insert.secondNumber = $("#txt2").val();
                 insert.operation = $("#button1").val();
@@ -46,13 +77,11 @@
                 $("#button2").click(function () {
                     var num1 = $("#txt1").val();
                     var num2 = $("#txt2").val();
-                    /*var oop = $("#button2").val();*/
                     var oop = $(this).attr('id');
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                         $("#result").text(data);
                    
                     var insert = {};
-                    /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button2").val();
@@ -74,13 +103,11 @@
                 $("#button3").click(function () {
                      var num1 = $("#txt1").val();
                     var num2 = $("#txt2").val();
-                   /* var oop = $("#button3").val();*/
                     var oop = $("#button3").val();
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                          $("#result").text(data);
                     
                     var insert = {};
-                    /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button3").val();
@@ -102,13 +129,11 @@
                 $("#button4").click(function () {
                         var num1 = $("#txt1").val();
                         var num2 = $("#txt2").val();
-                    /*var oop = $("#button4").val();*/
                     var oop = $("#button4").val();
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                         $("#result").text(data);
                     
                     var insert = {};
-                    /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button4").val();
@@ -161,6 +186,17 @@
             </tr>
         </table>
         <hr />
+        <table border="1">
+            <tr>
+                <th>FirstNumber</th>
+                <th>Second Number</th>
+                <th>Result</th>
+                <th>Operation</th>
+                <th>CreatedON</th>
+            </tr>
+            <tbody id="tbldata">
+            </tbody>
+        </table>
         @*<span id="result" />*@
 
     </div>
