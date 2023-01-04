@@ -1,0 +1,161 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                debugger;
+                var num1 = $("#txt1").val();
+                var num2 = $("#txt2").val();
+                /* var oop = $("#button1").val();*/
+                var oop = $(this).attr('id');
+                /*$("#input").val(oop); */
+                //alert($(this).val());
+                $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation="+oop, function (data) {
+                    $("#result").text(data);
+                })
+                var insert = {};
+                /*insert.ID = $("#txt1").val();*/
+                insert.firstNumber = $("#txt1").val();
+                insert.secondNumber = $("#txt2").val();
+                insert.operation = $("#button1").val();
+                /*insert.result = $("#result").text(data);*/
+                var date = new Date();
+                insert.CreatedOn = date.toLocaleString();                   
+                $.ajax({
+                    url: "https://localhost:44343/api/Calci/Calculator",
+                    type: "POST", contentType: "Application/json;charset-utf-8",
+                    data: JSON.stringify(insert),
+                    dataType: "json",
+                    success: function (response) {
+                        alert(response)
+                    }
+                });                
+                })
+                $("#button2").click(function () {
+                    var num1 = $("#txt1").val();
+                    var num2 = $("#txt2").val();
+                    /*var oop = $("#button2").val();*/
+                    var oop = $(this).attr('id');
+                    $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
+                        $("#result").text(data);
+                    })
+                    var insert = {};
+                    /*insert.ID = $("#txt1").val();*/
+                    insert.firstNumber = $("#txt1").val();
+                    insert.secondNumber = $("#txt2").val();
+                    insert.operation = $("#button2").val();
+                    var date = new Date();
+                    insert.CreatedOn = date.toLocaleString();       
+                    $.ajax({
+                        url: "https://localhost:44343/api/Calci/Calculator",
+                        type: "POST", contentType: "Application/json;charset-utf-8",
+                        data: JSON.stringify(insert),
+                        dataType: "json",
+                        success: function (response) {
+                            alert(response)
+                        }
+                    });
+                })
+
+                $("#button3").click(function () {
+                     var num1 = $("#txt1").val();
+                    var num2 = $("#txt2").val();
+                   /* var oop = $("#button3").val();*/
+                    var oop = $("#button3").val();
+                    $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
+                         $("#result").text(data);
+                    })
+                    var insert = {};
+                    /*insert.ID = $("#txt1").val();*/
+                    insert.firstNumber = $("#txt1").val();
+                    insert.secondNumber = $("#txt2").val();
+                    insert.operation = $("#button3").val();
+                    var date = new Date();
+                    insert.CreatedOn = date.toLocaleString();      
+                    $.ajax({
+                        url: "https://localhost:44343/api/Calci/Calculator",
+                        type: "POST", contentType: "Application/json;charset-utf-8",
+                        data: JSON.stringify(insert),
+                        dataType: "json",
+                        success: function (response) {
+                            alert(response)
+                        }
+                    });
+                })
+
+                $("#button4").click(function () {
+                        var num1 = $("#txt1").val();
+                        var num2 = $("#txt2").val();
+                    /*var oop = $("#button4").val();*/
+                    var oop = $("#button4").val();
+                    $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
+                        $("#result").text(data);
+                    })
+                    var insert = {};
+                    /*insert.ID = $("#txt1").val();*/
+                    insert.firstNumber = $("#txt1").val();
+                    insert.secondNumber = $("#txt2").val();
+                    insert.operation = $("#button4").val();
+                    var date = new Date();
+                    insert.CreatedOn = date.toLocaleString();       
+                    $.ajax({
+                        url: "https://localhost:44343/api/Calci/Calculator",
+                        type: "POST", contentType: "Application/json;charset-utf-8",
+                        data: JSON.stringify(insert),
+                        dataType: "json",
+                        success: function (response) {
+                            alert(response)
+                        }
+                    });
+                })
+
+            })
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Calculator</h1>
+        <h4>Find Sum of Two Numbers Using Web Api in Asp.Net MVC</h4>
+        <table border="1">
+            <tr>
+                <td>Enter First Number</td>
+                <td><input type="text" name="num1" id="txt1" value="" /></td>
+
+            </tr>           
+            <tr>
+                <td>Enter Second Number</td>
+                <td><input type="text" name="num2" id="txt2" value="" /></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><span id="result" /></td>
+                @*<td><input type="text" name="num3" id="result" value="" /></td>*@
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="sum" id="button1" value="Plus" />
+                    <input type="button" name="dif" id="button2" value="Minus" />
+                    <input type="button" name="mul" id="button3" value="Div" />
+                    <input type="button" name="div" id="button4" value="Mul" />
+                </td>
+            </tr>
+        </table>
+        <hr />
+        @*<span id="result" />*@
+
+    </div>
+</body>
+</html>
