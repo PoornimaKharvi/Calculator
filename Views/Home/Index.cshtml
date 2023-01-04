@@ -23,13 +23,13 @@
                 //alert($(this).val());
                 $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation="+oop, function (data) {
                     $("#result").text(data);
-                })
+               
                 var insert = {};
                 /*insert.ID = $("#txt1").val();*/
                 insert.firstNumber = $("#txt1").val();
                 insert.secondNumber = $("#txt2").val();
                 insert.operation = $("#button1").val();
-                /*insert.result = $("#result").text(data);*/
+                insert.result = data;
                 var date = new Date();
                 insert.CreatedOn = date.toLocaleString();                   
                 $.ajax({
@@ -40,7 +40,8 @@
                     success: function (response) {
                         alert(response)
                     }
-                });                
+                });    
+                })
                 })
                 $("#button2").click(function () {
                     var num1 = $("#txt1").val();
@@ -49,12 +50,13 @@
                     var oop = $(this).attr('id');
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                         $("#result").text(data);
-                    })
+                   
                     var insert = {};
                     /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button2").val();
+                    insert.result = data;
                     var date = new Date();
                     insert.CreatedOn = date.toLocaleString();       
                     $.ajax({
@@ -66,6 +68,7 @@
                             alert(response)
                         }
                     });
+                  })
                 })
 
                 $("#button3").click(function () {
@@ -75,12 +78,13 @@
                     var oop = $("#button3").val();
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                          $("#result").text(data);
-                    })
+                    
                     var insert = {};
                     /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button3").val();
+                    insert.result = data;
                     var date = new Date();
                     insert.CreatedOn = date.toLocaleString();      
                     $.ajax({
@@ -92,6 +96,7 @@
                             alert(response)
                         }
                     });
+                    })
                 })
 
                 $("#button4").click(function () {
@@ -101,12 +106,13 @@
                     var oop = $("#button4").val();
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                         $("#result").text(data);
-                    })
+                    
                     var insert = {};
                     /*insert.ID = $("#txt1").val();*/
                     insert.firstNumber = $("#txt1").val();
                     insert.secondNumber = $("#txt2").val();
                     insert.operation = $("#button4").val();
+                    insert.result = data;
                     var date = new Date();
                     insert.CreatedOn = date.toLocaleString();       
                     $.ajax({
@@ -118,6 +124,7 @@
                             alert(response)
                         }
                     });
+                    })
                 })
 
             })
