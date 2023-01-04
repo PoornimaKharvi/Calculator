@@ -23,11 +23,11 @@ namespace SimpleCalci.Controllers
             }
             else if (operation == "button3")
             {
-                c = Convert.ToInt16(firstnumber) * Convert.ToInt16(secondnumber);
+                c = Convert.ToInt16(firstnumber) / Convert.ToInt16(secondnumber);
             }
             else if (operation == "button4")
             {
-                c = Convert.ToInt16(firstnumber) / Convert.ToInt16(secondnumber);
+                c = Convert.ToInt16(firstnumber) * Convert.ToInt16(secondnumber);
             }
             return c.ToString();
         }

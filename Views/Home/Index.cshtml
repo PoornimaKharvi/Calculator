@@ -36,9 +36,7 @@
                     }
                     if (row != '') {
                         $('#tbldata').append(row);
-                    }
-                    /*   alert(result);*/
-
+                    }                   
                 },
                 error: function (msg) {
                    // debugger;
@@ -71,7 +69,7 @@
                     success: function (response) {
                         alert(response)
                     }
-                });    
+                });                        
                 })
                 })
                 $("#button2").click(function () {
@@ -103,7 +101,7 @@
                 $("#button3").click(function () {
                      var num1 = $("#txt1").val();
                     var num2 = $("#txt2").val();
-                    var oop = $("#button3").val();
+                    var oop = $(this).attr('id');
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                          $("#result").text(data);
                     
@@ -129,7 +127,7 @@
                 $("#button4").click(function () {
                         var num1 = $("#txt1").val();
                         var num2 = $("#txt2").val();
-                    var oop = $("#button4").val();
+                    var oop = $(this).attr('id');
                     $.getJSON("/api/Calci?firstnumber=" + num1 + "&secondnumber=" + num2 +"&operation=" + oop, function (data) {
                         $("#result").text(data);
                     
@@ -159,8 +157,7 @@
 </head>
 <body>
     <div>
-        <h1>Calculator</h1>
-        <h4>Find Sum of Two Numbers Using Web Api in Asp.Net MVC</h4>
+        <h1>Calculator</h1>       
         <table border="1">
             <tr>
                 <td>Enter First Number</td>
@@ -180,12 +177,13 @@
                 <td>
                     <input type="button" name="sum" id="button1" value="Plus" />
                     <input type="button" name="dif" id="button2" value="Minus" />
-                    <input type="button" name="mul" id="button3" value="Div" />
-                    <input type="button" name="div" id="button4" value="Mul" />
+                    <input type="button" name="mul" id="button4" value="Mul" />
+                    <input type="button" name="div" id="button3" value="Div" />
                 </td>
             </tr>
         </table>
         <hr />
+        <h1>History Data</h1>
         <table border="1">
             <tr>
                 <th>FirstNumber</th>
