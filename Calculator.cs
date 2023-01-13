@@ -15,9 +15,9 @@ namespace SimpleCalci
     public partial class Calculator
     {
         public int ID { get; set; }
-        public Nullable<decimal> firstnumber { get; set; }
-        public Nullable<decimal> secondnumber { get; set; }
-        public Nullable<decimal> result { get; set; }
+        public Nullable<double> firstnumber { get; set; }
+        public Nullable<double> secondnumber { get; set; }
+        public Nullable<double> result { get; set; }
         public string operation { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
     }

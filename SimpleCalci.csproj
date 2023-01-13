@@ -179,7 +179,22 @@
     </Compile>
     <Compile Include="CalciResultClass.cs" />
     <Compile Include="Calculator.cs">
-      <DependentUpon>CalciModel.tt</DependentUpon>
+      <DependentUpon>CalculatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculatorModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculatorModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculatorModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculatorModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculatorModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CalciController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -200,6 +215,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CalciModel.edmx</DependentUpon>
       <LastGenOutput>CalciModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="CalculatorModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CalculatorModel.edmx</DependentUpon>
+      <LastGenOutput>CalculatorModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CalculatorModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CalculatorModel.edmx</DependentUpon>
+      <LastGenOutput>CalculatorModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -235,6 +260,13 @@
     </EntityDeploy>
     <Content Include="CalciModel.edmx.diagram">
       <DependentUpon>CalciModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="CalculatorModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CalculatorModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="CalculatorModel.edmx.diagram">
+      <DependentUpon>CalculatorModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\JavaScript.js" />

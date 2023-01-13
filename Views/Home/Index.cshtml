@@ -9,9 +9,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        .button {
+            color:white;
+            background-color:teal;
+        }
+        .div {
+            border: solid; 
+            margin-top: 36px; 
+            margin-left: 187px; 
+            margin-right: 420px; 
+            color: teal; 
+            padding-left: 58px; 
+            padding-bottom: 11px; 
+        }
+        .tr {
+            background-color: teal;
+            color: white;
+        }
+    </style>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript">
+
         function getData() {
             // debugger;
             var url = "/api/Calci";
@@ -156,17 +176,17 @@
     </script>
 </head>
 <body>
-    <div>
+    <div class="div">
         <h1>Calculator</h1>       
         <table border="1">
             <tr>
                 <td>Enter First Number</td>
-                <td><input type="text" name="num1" id="txt1" value="" /></td>
+                <td><input type="text" name="num1" id="txt1" value="" class="form-control" /></td>
 
             </tr>           
             <tr>
                 <td>Enter Second Number</td>
-                <td><input type="text" name="num2" id="txt2" value="" /></td>
+                <td><input type="text" name="num2" id="txt2" value="" class="form-control"/></td>
             </tr>
             <tr>
                 <td>Result</td>
@@ -175,10 +195,10 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" name="sum" id="button1" value="ADD" />
-                    <input type="button" name="dif" id="button2" value="SUB" />
-                    <input type="button" name="mul" id="button4" value="MUL" />
-                    <input type="button" name="div" id="button3" value="DIV" />
+                    <input type="button" name="sum" id="button1" value="ADD" class="form-control button"  />
+                    <input type="button" name="dif" id="button2" value="SUB" class="form-control button" />
+                    <input type="button" name="mul" id="button4" value="MUL" class="form-control button" />
+                    <input type="button" name="div" id="button3" value="DIV" class="form-control button" />
                     
                 </td>
             </tr>
@@ -186,7 +206,7 @@
         <hr />
         <h1>History Data</h1>
         <table border="1">
-            <tr>
+            <tr class="tr">
                 <th>First Number</th>
                 <th>Second Number</th>
                 <th>Result</th>

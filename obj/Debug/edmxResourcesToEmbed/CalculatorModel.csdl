@@ -5,13 +5,13 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="firstnumber" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="secondnumber" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="result" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="firstnumber" Type="Double" />
+    <Property Name="secondnumber" Type="Double" />
+    <Property Name="result" Type="Double" />
     <Property Name="operation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="ADESEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ADESEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Calculators" EntityType="Self.Calculator" />
   </EntityContainer>
 </Schema>
